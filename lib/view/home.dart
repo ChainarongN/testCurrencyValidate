@@ -43,40 +43,42 @@ class _HomeState extends State<Home> {
                       fibonacci(pvd, context),
                       primeNumber(pvd, context),
                       filterArray(pvd, context),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(
-                                top: 30, left: 30, right: 30),
-                            // width: MediaQuery.of(context).size.width * 0.3,
-                            child: TextField(
-                              keyboardType: TextInputType.number,
-                              onChanged: (value) {
-                                pvd.validate(value);
-                              },
-                              decoration: const InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: 'input',
-                              ),
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(left: 30, bottom: 60),
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              pvd.validateError,
-                              style: const TextStyle(
-                                  color: Colors.red, fontSize: 13),
-                            ),
-                          )
-                        ],
-                      ),
+                      validate(pvd),
                     ],
                   ),
           ),
         ),
       ),
+    );
+  }
+
+  Column validate(HomeProvider pvd) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(top: 30, left: 30, right: 30),
+          // width: MediaQuery.of(context).size.width * 0.3,
+          child: TextField(
+            keyboardType: TextInputType.number,
+            onChanged: (value) {
+              pvd.validate(value);
+            },
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'input',
+            ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 30, bottom: 60),
+          alignment: Alignment.centerLeft,
+          child: Text(
+            pvd.validateError,
+            style: const TextStyle(color: Colors.red, fontSize: 13),
+          ),
+        )
+      ],
     );
   }
 

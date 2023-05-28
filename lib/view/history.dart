@@ -22,19 +22,6 @@ class _HistoryPageState extends State<HistoryPage> {
             child: ListView.builder(
           itemCount: pvd.historyList.length,
           itemBuilder: (context, index) {
-            // return ListTile(
-            //   title: Text('${pvd.historyList[index].time!.updated}'),
-            //   subtitle: Column(
-            //     children: <Widget>[
-            //       Text(
-            //           '${pvd.historyList[index].bpi!.uSD!.code} : ${pvd.historyList[index].bpi!.uSD!.rate}'),
-            //       Text(
-            //           '${pvd.historyList[index].bpi!.gBP!.code} : ${pvd.historyList[index].bpi!.gBP!.rate}'),
-            //       Text(
-            //           '${pvd.historyList[index].bpi!.eUR!.code} : ${pvd.historyList[index].bpi!.eUR!.rate}')
-            //     ],
-            //   ),
-            // );
             return Container(
               margin: const EdgeInsets.only(
                   left: 30, top: 20, right: 30, bottom: 10),
